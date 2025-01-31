@@ -1,0 +1,106 @@
+html {
+    font-size: clamp( 5px, 0.732vw, 10px);
+}
+
+@media (max-width: 425px) {
+    html {
+        font-size: clamp( 4px, 1.4vw, 10px);
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #727272;
+    width: fit-content;
+    margin: 10rem auto;
+    position: relative;
+    box-shadow: 1rem 1rem 1rem 0 rgba(166, 166, 166, 0.5);
+}
+
+.field.game-over .row{
+    pointer-events: none;
+}
+
+.row {
+    display: flex;
+}
+
+.row_clue {
+    height: 15rem;
+    min-height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: aquamarine;
+    flex-direction: column;
+    writing-mode: vertical-rl;
+}
+
+.row + .row {
+    border-top: 1px solid #727272;
+}
+
+.coll {
+    flex: 1;
+    max-width: 9rem;
+    width: 9rem;
+    height: 9rem;
+}
+
+.coll_clue {
+    width: 15rem;
+    min-width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: aquamarine;
+}
+
+.coll[data-cell="1"] {
+    background-color: black;
+}
+
+.coll + .coll {
+    border-left: 1px solid #727272;
+}
+
+.message {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: yellow;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem 2rem;
+    box-shadow: 1rem 1rem 1rem 0 rgba(166, 166, 166, 0.5);
+    border: 1rem dashed black;
+    max-width: 66%;
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+.message.transparent {
+    opacity: 0;
+}
+
+.message p {
+    margin: 0;
+    color: black;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+}
